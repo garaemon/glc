@@ -29,7 +29,7 @@ catkin b ros_glc
 # Capture
 Run rviz with glc-capture.
 ```
-rosrun ros_glc glc-capture rosrun rviz rviz
+glc-capture rosrun rviz rviz
 ```
 
 Start recording by publishing `std_msgs/Empty` message to `/glc_start_capture`.
@@ -44,6 +44,15 @@ rostopic pub /glc_stop_capture std_msgs/Empty
 ```
 
 And you will get a glc file like `rviz-56770-0.glc`.
+
+## In lauch file
+
+Use `launch-prefix` attribute.
+```xml
+<node pkg="rviz" type="rviz" ...
+      launch-prefix="glc-capture">
+      ...
+```
 
 # Play back
 Use glc-play command.
