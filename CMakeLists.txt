@@ -1,7 +1,8 @@
-
-CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 
 PROJECT(glc)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs)
+catkin_package()
 
 SET(GLC_SOVER 0)
 SET(GLC_VER 0.5.8)
@@ -43,6 +44,7 @@ IF (SCRIPTS)
     INSTALL(FILES scripts/capture.sh
     		  scripts/encode.sh
     		  scripts/play.sh
-    		  DESTINATION share/glc)
+    		  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+                  USE_SOURCE_PERMISSIONS)
   ENDIF (UNIX)
 ENDIF (SCRIPTS)

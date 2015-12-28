@@ -54,8 +54,8 @@ __PRIVATE void *wrapped_func(const char *symbol);
 __PRIVATE int open_stream();
 __PRIVATE int close_stream();
 __PRIVATE int reload_stream();
-__PRIVATE int start_capture();
-__PRIVATE int stop_capture();
+int start_capture();
+int stop_capture();
 __PRIVATE void increment_capture();
 /**  \} */
 

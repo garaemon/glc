@@ -9,10 +9,12 @@ SET(HOOK_SRC lib.h
 	     main.c
 	     opengl.c
 	     alsa.c
-	     x11.c)
-
+	     x11.c
+             ros.cpp)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs)
+INCLUDE_DIRECTORIES(${catkin_INCLUDE_DIRS})
 ADD_LIBRARY(glc-hook SHARED ${HOOK_SRC})
-TARGET_LINK_LIBRARIES(glc-hook glc-core glc-capture ${ELFHACKS_LIBRARY} ${PACKETSTREAM_LIBRARY})
+TARGET_LINK_LIBRARIES(glc-hook glc-core glc-capture ${ELFHACKS_LIBRARY} ${PACKETSTREAM_LIBRARY} ${catkin_LIBRARIES})
 SET_TARGET_PROPERTIES(glc-hook PROPERTIES
 		      OUTPUT_NAME glc-hook
 		      VERSION ${GLC_VER}
@@ -23,5 +25,5 @@ IF (UNIX)
     SET(MLIBDIR "lib")
   ENDIF (NOT MLIBDIR)
   INSTALL(TARGETS glc-hook
-  	  LIBRARY DESTINATION ${MLIBDIR})
+  	  LIBRARY DESTINATION {CATKIN_PACKAGE_LIB_DESTINATION})
 ENDIF (UNIX)
