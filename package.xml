@@ -1,5 +1,5 @@
 <package>
-  <name>glc</name>
+  <name>ros_glc</name>
   <version>0.0.0</version>
   <description>Includes emacs scripts, ros tool alias generator, and launch doc generator.</description>
 
