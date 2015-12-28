@@ -29,7 +29,7 @@ catkin b ros_glc
 # Capture
 Run rviz with glc-capture.
 ```
-rosrun ros_glc glc-capture rviz
+rosrun ros_glc glc-capture rosrun rviz rviz
 ```
 
 Start recording by publishing `std_msgs/Empty` message to `/glc_start_capture`.
@@ -49,4 +49,10 @@ And you will get a glc file like `rviz-56770-0.glc`.
 Use glc-play command.
 ```
 rosrun ros_glc glc-play rviz-56770-0.glc
+```
+
+# Encode
+Use glc_encode.sh script.
+```
+rosrun ros_glc glc_encode.sh rviz-56770-0.glc
 ```
