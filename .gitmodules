@@ -8,5 +8,5 @@
 	branch = master
 [submodule "elfhacks"]
 	path = elfhacks
-	url = https://github.com/nullkey/elfhacks.git
-	branch = stable
+	url = https://github.com/ienorand/elfhacks.git
+	branch = master
